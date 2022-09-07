@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - JELLYFIN_PublishedServerUrl=192.168.0.13 #optional
+    volumes:
+      - ./config:/config
+      - /home/kashiwade/Server/Nextcloud/docker_inside/data/kashiwade/files/Music:/media
+    ports:
+      - 8096:8096
+    restart: unless-stopped
