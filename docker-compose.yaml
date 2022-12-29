@@ -9,7 +9,7 @@ services:
       - JELLYFIN_PublishedServerUrl=192.168.0.13 #optional
     volumes:
       - ./config:/config
-      - /home/kashiwade/Server/Nextcloud/docker_inside/data/kashiwade/files/Music:/media
+      - /mnt/hdd/Server/Nextcloud/data/kashiwade/files/Media:/media
     ports:
       - 8096:8096
-    restart: unless-stopped
+    restart: always
